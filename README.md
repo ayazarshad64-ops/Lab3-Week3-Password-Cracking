@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="week3-screenshots/week3-banner.png" alt="Week 3 - Password Cracking" width="100%">
+  <img src="screenshots/week3-banner.png" alt="Week 3 - Password Cracking" width="100%">
 </p>
 
 <h1 align="center">🔓 WEEK 3 | Password Cracking Techniques</h1>
@@ -30,25 +30,25 @@ Downloaded John the Ripper from the official Openwall website and installed the 
 Downloaded the encrypted PDF file. Opened the online hash extractor tool (`onlinehashcrack.com`) to extract the hash from the locked PDF.
 
 **Evidence (Hash Extractor Tool):**
-<img src="week3-screenshots/w3-jtr-hash-extractor.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-jtr-hash-extractor.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Step 4: Save the Hash**
 Copied the extracted PDF hash code, opened **Notepad**, pasted the code, and saved the file as **`hash.txt`**.
 
 **Evidence (Saving hash.txt file):**
-<img src="week3-screenshots/w3-jtr-file-hash.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-jtr-file-hash.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Step 5: Crack the Password in Johnny GUI**
 Opened Johnny GUI, loaded the `hash.txt` file, and started the attack. The tool successfully cracked the password, which was displayed as `password1`.
 
 **Evidence (Johnny GUI Password Cracked):**
-<img src="week3-screenshots/w3-jtr-johnny.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-jtr-johnny.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Step 6: Open the PDF File**
 Used the cracked password (`password1`) to successfully open the first PDF file and captured the flag.
 
 **Evidence (Flag Captured):**
-<img src="week3-screenshots/w3-jtr-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-jtr-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 <br>
 
@@ -64,16 +64,16 @@ Used the cracked password (`password1`) to successfully open the first PDF file 
 Opened the Networkwalks Hash Calculator and uploaded the locked PDF file to extract the hash value starting with `$pdf$...`.
 
 **Evidence (Uploading PDF):**
-<img src="week3-screenshots/w3-pdf-upload.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-pdf-upload.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Evidence (Hash Calculator Tool):**
-<img src="week3-screenshots/w3-hash-calculator.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-hash-calculator.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Step 3: Prepare the Password Cracker**
 Copied the full `$pdf$` hash and opened the Networkwalks Password Cracker in the browser. Pasted the hash into the input field and selected the built-in 100-word list.
 
 **Evidence (Password Cracker Interface):**
-<img src="week3-screenshots/w3-cracker-start.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-cracker-start.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Step 4: Run the Dictionary Attack**
 Started the cracking process. The tool tried different passwords from the wordlist. After trying 91 out of 100 words, it successfully found the match.
@@ -81,13 +81,13 @@ Started the cracking process. The tool tried different passwords from the wordli
 *   **Cracked Password:** `password1`
 
 **Evidence (Dictionary Attack in Progress & Match Found):**
-<img src="week3-screenshots/w3-cracker-match.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-cracker-match.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Step 5: Capture the Flag**
 Used the cracked password to open the PDF and capture the flag using Networkwalks tools.
 
 **Evidence (Flag Captured):**
-<img src="week3-screenshots/w3-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="screenshots/w3-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 ---
 
