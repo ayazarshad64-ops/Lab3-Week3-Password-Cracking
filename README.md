@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="screenshots/week3-banner.png" alt="Week 3 - Password Cracking" width="100%">
+  <img src="week3-screenshots/week3-banner.png" alt="Week 3 - Password Cracking" width="100%">
 </p>
 
-<h1 align="center">🔓 WEEK 3 | Password Cracking with Networkwalks Tools</h1>
+<h1 align="center">🔓 WEEK 3 | Password Cracking Techniques</h1>
 
 <br>
 
@@ -17,63 +17,88 @@
 
 ---
 
-## 🎯 Objective
-To understand the mechanics of a Dictionary Attack by extracting the `$pdf$` hash from a locked PDF file and cracking it using the Networkwalks Hash Calculator and Password Cracker tools.
+# 📌 MODULE 1: Password Cracking with JTR (John The Ripper)
 
----
-
-## 📝 Task 1: Crack the Locked PDF
-
-**Target File:** `My Locked PDF1.pdf`
-**Tools Used:** [Networkwalks Hash Calculator](https://networkwalks.com/hash-calculator/) & [Networkwalks Password Cracker](https://networkwalks.com/password-cracker/)
+**Task:** Crack the password of an attached PDF file (`My Locked PDF1.pdf`) using **John the Ripper (JTR)** and **Johnny GUI** on a Windows PC.
 
 ### ⚙️ Step-by-Step Execution
 
-**Step 1: Download the Target File**
-Downloaded the encrypted PDF file (`My Locked PDF1.pdf`) to the laptop from the lab portal.
+**Step 1 & 2: Install John the Ripper & Johnny GUI**
+Downloaded John the Ripper from the official Openwall website and installed the Johnny GUI. Configured the settings to point to the `john.exe` file located in the `run` folder.
 
-**Evidence (Locked PDF Files):**
-<img src="screenshots/w3-locked-files.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+**Step 3: Extract PDF Hash**
+Downloaded the encrypted PDF file. Opened the online hash extractor tool (`onlinehashcrack.com`) to extract the hash from the locked PDF.
 
-**Step 2 & 3: Extract the Hash**
+**Evidence (Hash Extractor Tool):**
+<img src="week3-screenshots/w3-jtr-hash-extractor.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+
+**Step 4: Save the Hash**
+Copied the extracted PDF hash code, opened **Notepad**, pasted the code, and saved the file as **`hash.txt`**.
+
+**Evidence (Saving hash.txt file):**
+<img src="week3-screenshots/w3-jtr-file-hash.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+
+**Step 5: Crack the Password in Johnny GUI**
+Opened Johnny GUI, loaded the `hash.txt` file, and started the attack. The tool successfully cracked the password, which was displayed as `password1`.
+
+**Evidence (Johnny GUI Password Cracked):**
+<img src="week3-screenshots/w3-jtr-johnny.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+
+**Step 6: Open the PDF File**
+Used the cracked password (`password1`) to successfully open the first PDF file and captured the flag.
+
+**Evidence (Flag Captured):**
+<img src="week3-screenshots/w3-jtr-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+
+<br>
+
+---
+
+# 📌 MODULE 2: Password Cracking with Networkwalks Tools
+
+**Task:** Crack the password of the attached PDF file (`My Locked PDF1.pdf`) using the Networkwalks Hash Calculator and Password Cracker tools.
+
+### ⚙️ Step-by-Step Execution
+
+**Step 1 & 2: Extract the Hash**
 Opened the Networkwalks Hash Calculator and uploaded the locked PDF file to extract the hash value starting with `$pdf$...`.
 
 **Evidence (Uploading PDF):**
-<img src="screenshots/w3-pdf-upload.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="week3-screenshots/w3-pdf-upload.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 **Evidence (Hash Calculator Tool):**
-<img src="screenshots/w3-hash-calculator.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="week3-screenshots/w3-hash-calculator.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
-**Step 4 & 5: Prepare the Password Cracker**
+**Step 3: Prepare the Password Cracker**
 Copied the full `$pdf$` hash and opened the Networkwalks Password Cracker in the browser. Pasted the hash into the input field and selected the built-in 100-word list.
 
 **Evidence (Password Cracker Interface):**
-<img src="screenshots/w3-cracker-start.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="week3-screenshots/w3-cracker-start.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
-**Step 6 & 7: Run the Dictionary Attack**
+**Step 4: Run the Dictionary Attack**
 Started the cracking process. The tool tried different passwords from the wordlist. After trying 91 out of 100 words, it successfully found the match.
 
 *   **Cracked Password:** `password1`
 
 **Evidence (Dictionary Attack in Progress & Match Found):**
-<img src="screenshots/w3-cracker-match.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="week3-screenshots/w3-cracker-match.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
-**Step 8 & 9: Open the PDF**
-Used the cracked password (`password1`) to successfully open the locked PDF file and capture the flag.
+**Step 5: Capture the Flag**
+Used the cracked password to open the PDF and capture the flag using Networkwalks tools.
 
 **Evidence (Flag Captured):**
-<img src="screenshots/w3-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
+<img src="week3-screenshots/w3-success.png" width="600" style="border: 1px solid #ccc; border-radius: 5px; box-shadow: 2px 2px 8px rgba(0,0,0,0.2);">
 
 ---
 
-## 🔍 Key Findings & Takeaways
-*   **Dictionary Attacks are Effective:** If a password is a common word (like `password1`), a dictionary attack can crack it in seconds.
-*   **Hashing is One-Way:** We cannot reverse a hash, but we can generate hashes of known words and compare them to the target hash to find a match.
-*   **Password Security:** This lab proves why we must use complex, long, and unpredictable passwords (or passphrases) instead of common dictionary words to prevent such attacks.
+## 🔍 Key Takeaways
+*   **JTR vs Online Tools:** John the Ripper provides powerful offline cracking capabilities, while online tools like Networkwalks offer a quick, browser-based alternative for simple dictionary attacks.
+*   **Hash Extraction:** Extracting the hash is the most critical step. Once the `$pdf$` hash is extracted, the original file is no longer needed for the cracking process.
+*   **Weak Passwords:** The password `password1` is a classic example of a weak, dictionary-based password that can be cracked in seconds.
 
 ---
 
 <div style="background-color: #f8f9fa; border-left: 6px solid #28a745; border-radius: 8px; padding: 15px; margin-bottom: 25px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-  <h3 style="margin-top: 0; color: #218838;">✅ Lab Status: Completed</h3>
-  <p style="margin-bottom: 0; color: #2c3e50;">Successfully extracted the hash and cracked the PDF password using Networkwalks tools.</p>
+  <h3 style="margin-top: 0; color: #218838;">✅ Week 3 Status: Both Modules Completed</h3>
+  <p style="margin-bottom: 0; color: #2c3e50;">Successfully executed Dictionary Attacks using both John the Ripper (JTR) and Networkwalks web tools.</p>
 </div>
